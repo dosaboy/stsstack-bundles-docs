@@ -53,7 +53,7 @@ tools/create_octavia_lb.sh __VM_UUID__
 Now check that your loadbalancer is up and load balancing to port 80 in the vm
 
 ``
-lb_vip=`openstack loadbalancer show lb1 -c vip_address -f value`
-lb_fip=`openstack floating ip list|egrep -v "\+-+|ID"| awk "\\$6==\\"$lb_vip\\" {print \\$4}"`
+lb_vip=$(openstack loadbalancer show lb1 -c vip_address -f value)
+lb_fip=$(openstack floating ip list|egrep -v "\+-+|ID"| awk "\\$6==\\"$lb_vip\\" {print \\$4}")
 nc -vz  $lb_fip 80
 ``
