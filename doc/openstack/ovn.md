@@ -12,7 +12,7 @@ First you need to unseal vault:
 ./tools/vault-unseal-and-authorise.sh
 ```
 
-OVN require vault to be deployed and used for cert management so you need to install the Vault CA to be able to speak to endpoints:
+Since ovn requires vault to be deployed and used for cert management you need to install the vault-generated CA to be able to speak to endpoints:
 
 ```
 ./tools/install_local_ca.sh
